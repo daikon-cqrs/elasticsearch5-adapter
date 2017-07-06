@@ -1,0 +1,38 @@
+{
+    "name": "daikon/elasticsearch5-adapter",
+    "type": "library",
+    "description": "Elasticsearch 5 adapter for Daikon projects.",
+    "keywords": [ "elasticsearch", "adapter" ],
+    "homepage": "https://github.com/daikon-cqrs/elasticsearch5-adapter",
+    "license": "MPL-2.0",
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1",
+        "daikon/dbal": "master@dev",
+        "elasticsearch/elasticsearch": "^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.2",
+        "satooshi/php-coveralls": "master@dev",
+        "squizlabs/php_codesniffer": "^3.0"
+    },
+    "autoload": {
+        "psr-4": { "Daikon\\Elasticsearch5\\" : "src" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Daikon\\Tests\\Elasticsearch5\\": "tests" }
+    },
+    "scripts": {
+        "build": [
+            "@test",
+            "@code-sniffer",
+            "@validate-json"
+        ],
+        "test": "phpunit",
+        "code-sniffer": "phpcs --extensions=php --standard=psr2 src tests",
+        "code-sniffer-autofix": "phpcbf --standard=psr2 -d tabWidth=4 src",
+        "validate-json": "composer validate --no-check-all --no-check-lock",
+        "validate-deps": "composer validate --with-dependencies --strict"
+    }
+}
