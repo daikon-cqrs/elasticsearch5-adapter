@@ -2,6 +2,7 @@
 
 namespace Daikon\Elasticsearch5\Storage;
 
+use Daikon\Dbal\Exception\DbalException;
 use Daikon\Dbal\Storage\StorageAdapterInterface;
 use Daikon\Elasticsearch5\Connector\Elasticsearch5Connector;
 use Elasticsearch\Common\Exceptions\Missing404Exception;
@@ -22,7 +23,7 @@ final class Elasticsearch5StorageAdapter implements StorageAdapterInterface
     {
         try {
             $document = $this->connector->getConnection()->get([
-                'index' => $this->settings['index'],
+                'index' => $this->getIndex(),
                 'type' => $this->settings['type'],
                 'id' => $identifier
             ]);
@@ -37,7 +38,7 @@ final class Elasticsearch5StorageAdapter implements StorageAdapterInterface
     public function write(string $identifier, array $data)
     {
         $document = [
-            'index' => $this->settings['index'],
+            'index' => $this->getIndex(),
             'type' => $this->settings['type'],
             'id' => $identifier,
             'body' => $data
@@ -50,5 +51,11 @@ final class Elasticsearch5StorageAdapter implements StorageAdapterInterface
 
     public function delete(string $identifier)
     {
+        throw new DbalException('Not yet implemented');
+    }
+
+    private function getIndex(): string
+    {
+        return $this->settings['index'] ?? $this->connector->getSettings()['index'];
     }
 }
