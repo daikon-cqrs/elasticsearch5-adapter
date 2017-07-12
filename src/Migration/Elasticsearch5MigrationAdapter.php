@@ -59,14 +59,14 @@ final class Elasticsearch5MigrationAdapter implements MigrationAdapterInterface
         return $this->connector;
     }
 
-    private function createMigrationList(array $migrationData)
+    private function createMigrationList(array $migrationData): MigrationList
     {
         $migrations = [];
         foreach ($migrationData as $migration) {
             $migrationClass = $migration['@type'];
             $migrations[] = new $migrationClass(new \DateTimeImmutable($migration['executedAt']));
         }
-        return new MigrationList($migrations);
+        return (new MigrationList($migrations))->sortByVersion();
     }
 
     private function getIndex(): string
