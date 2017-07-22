@@ -5,6 +5,7 @@ namespace Daikon\Elasticsearch5\Storage;
 use Daikon\Dbal\Exception\DbalException;
 use Daikon\Dbal\Storage\StorageAdapterInterface;
 use Daikon\Elasticsearch5\Connector\Elasticsearch5Connector;
+use Daikon\ReadModel\Projection\ProjectionMap;
 use Elasticsearch\Common\Exceptions\Missing404Exception;
 
 final class Elasticsearch5StorageAdapter implements StorageAdapterInterface
@@ -47,6 +48,29 @@ final class Elasticsearch5StorageAdapter implements StorageAdapterInterface
         $this->connector->getConnection()->index($document);
 
         return true;
+    }
+
+    public function search(array $query, $from, $size)
+    {
+        $query = array_merge(
+            $query,
+            [
+                'index' => $this->getIndex(),
+                'type' => $this->settings['type'],
+                'from' => $from,
+                'size' => $size
+            ]
+        );
+
+        $results = $this->connector->getConnection()->search($query);
+
+        $projections = [];
+        foreach ($results['hits']['hits'] as $document) {
+            $projectionClass = $document['_source']['@type'];
+            $projections[$document['_id']] = $projectionClass::fromArray($document['_source']);
+        }
+
+        return new ProjectionMap($projections);
     }
 
     public function delete(string $identifier)
