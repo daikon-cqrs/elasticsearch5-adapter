@@ -248,12 +248,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/read-model.git",
-                "reference": "c3ca89b48d7dcfa11f76a107d927000a710b255f"
+                "reference": "72a5c832d7a73038041df0c1ef823896360e059d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/c3ca89b48d7dcfa11f76a107d927000a710b255f",
-                "reference": "c3ca89b48d7dcfa11f76a107d927000a710b255f",
+                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/72a5c832d7a73038041df0c1ef823896360e059d",
+                "reference": "72a5c832d7a73038041df0c1ef823896360e059d",
                 "shasum": ""
             },
             "require": {
@@ -286,7 +286,7 @@
                 "read-model",
                 "repository"
             ],
-            "time": "2017-07-23 23:57:41"
+            "time": "2017-07-24 15:53:36"
         },
         {
             "name": "elasticsearch/elasticsearch",

@@ -53,17 +53,20 @@ final class Elasticsearch5StorageAdapter implements StorageAdapterInterface, Sea
         return true;
     }
 
-    public function search(QueryInterface $query, $from, $size): ProjectionMap
+    public function delete(string $identifier): bool
     {
-        $query = array_merge(
-            $query->toNative(),
-            [
-                'index' => $this->getIndex(),
-                'type' => $this->settings['type'],
-                'from' => $from,
-                'size' => $size
-            ]
-        );
+        throw new DbalException('Not yet implemented');
+    }
+
+    public function search(QueryInterface $query, int $from = null, int $size = null): ProjectionMap
+    {
+        $query = [
+            'index' => $this->getIndex(),
+            'type' => $this->settings['type'],
+            'from' => $from,
+            'size' => $size,
+            'body' => $query->toNative()
+        ];
 
         $results = $this->connector->getConnection()->search($query);
 
@@ -74,11 +77,6 @@ final class Elasticsearch5StorageAdapter implements StorageAdapterInterface, Sea
         }
 
         return new ProjectionMap($projections);
-    }
-
-    public function delete(string $identifier): bool
-    {
-        throw new DbalException('Not yet implemented');
     }
 
     private function getIndex(): string
