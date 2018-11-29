@@ -13,8 +13,10 @@ use Elasticsearch\Common\Exceptions\Missing404Exception;
 
 final class Elasticsearch5StorageAdapter implements StorageAdapterInterface, SearchAdapterInterface
 {
+    /** @var Elasticsearch5Connector */
     private $connector;
 
+    /** @var array */
     private $settings;
 
     public function __construct(Elasticsearch5Connector $connector, array $settings = [])
@@ -23,7 +25,7 @@ final class Elasticsearch5StorageAdapter implements StorageAdapterInterface, Sea
         $this->settings = $settings;
     }
 
-    public function read(string $identifier): ProjectionInterface
+    public function read(string $identifier): ?ProjectionInterface
     {
         try {
             $document = $this->connector->getConnection()->get([

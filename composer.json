@@ -8,7 +8,7 @@
     "prefer-stable": true,
     "minimum-stability": "dev",
     "require": {
-        "php": ">=7.1",
+        "php": "^7.2",
         "daikon/dbal": "dev-upgrade/nativecalls",
         "daikon/read-model": "dev-upgrade/nativecalls",
         "elasticsearch/elasticsearch": "^5.0"
@@ -25,11 +25,17 @@
     "autoload-dev": {
         "psr-4": { "Daikon\\Tests\\Elasticsearch5\\": "tests" }
     },
+    "archive": {
+        "exclude": [
+            "/build",
+            "/vendor"
+        ]
+    },
     "scripts": {
         "build": [ "@sniff", "@tests" ],
-        "code-sniffer": "phpcs -p -s --extensions=php --standard='PSR1,PSR2' src/ tests/",
-        "code-sniffer-autofix": "phpcbf --standard=PSR2 -d tabWidth=4 src/ tests/",
-        "copy-paste-detector": "phpcpd src/ tests/ || true",
+        "code-sniffer": "phpcs -p -s --extensions=php --standard='PSR1,PSR2' src/",
+        "code-sniffer-autofix": "phpcbf --standard=PSR2 -d tabWidth=4 src/",
+        "copy-paste-detector": "phpcpd src/ || true",
         "sniff": [
             "@code-sniffer",
             "@copy-paste-detector",
