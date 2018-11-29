@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5904ea8eb60b50ee443f3f64da8bacb5",
+    "content-hash": "7ce15cc46ae3d43cba1ec60fa713b33f",
     "packages": [
         {
             "name": "beberlei/assert",
@@ -63,16 +63,16 @@
         },
         {
             "name": "daikon/data-structure",
-            "version": "dev-upgrade-7.2",
+            "version": "dev-upgrade/nativecalls",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/data-structure.git",
-                "reference": "61e272167c17bcf2735670352e402da3ca426430"
+                "reference": "feed4eb29f4252a3beb3a7b44123cb3ac67b1764"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/61e272167c17bcf2735670352e402da3ca426430",
-                "reference": "61e272167c17bcf2735670352e402da3ca426430",
+                "url": "https://api.github.com/repos/daikon-cqrs/data-structure/zipball/feed4eb29f4252a3beb3a7b44123cb3ac67b1764",
+                "reference": "feed4eb29f4252a3beb3a7b44123cb3ac67b1764",
                 "shasum": ""
             },
             "require": {
@@ -109,27 +109,28 @@
                 "list",
                 "map"
             ],
-            "time": "2018-10-12T01:24:02+00:00"
+            "time": "2018-11-28T16:45:26+00:00"
         },
         {
             "name": "daikon/dbal",
-            "version": "dev-upgrade-7.2",
+            "version": "dev-upgrade/nativecalls",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/dbal.git",
-                "reference": "67aea542f3c94a5ee598092a006237f22667e52e"
+                "reference": "6e43a50839e6097f2bdb2243c889543619317375"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/67aea542f3c94a5ee598092a006237f22667e52e",
-                "reference": "67aea542f3c94a5ee598092a006237f22667e52e",
+                "url": "https://api.github.com/repos/daikon-cqrs/dbal/zipball/6e43a50839e6097f2bdb2243c889543619317375",
+                "reference": "6e43a50839e6097f2bdb2243c889543619317375",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^3.0",
-                "daikon/data-structure": "dev-upgrade-7.2",
-                "daikon/event-sourcing": "dev-upgrade-7.2",
-                "daikon/read-model": "dev-upgrade-7.2",
+                "daikon/data-structure": "dev-upgrade/nativecalls",
+                "daikon/event-sourcing": "dev-upgrade/nativecalls",
+                "daikon/interop": "master@dev",
+                "daikon/read-model": "dev-upgrade/nativecalls",
                 "php": "^7.2"
             },
             "require-dev": {
@@ -155,25 +156,26 @@
                 "dbal",
                 "immutable"
             ],
-            "time": "2018-10-13T14:32:43+00:00"
+            "time": "2018-11-29T14:14:35+00:00"
         },
         {
             "name": "daikon/event-sourcing",
-            "version": "dev-upgrade-7.2",
+            "version": "dev-upgrade/nativecalls",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/event-sourcing.git",
-                "reference": "a05b6b17d7253684552a2190478530a7c7c21f85"
+                "reference": "d2745b944260699927c0a09993125afe8609d5af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/a05b6b17d7253684552a2190478530a7c7c21f85",
-                "reference": "a05b6b17d7253684552a2190478530a7c7c21f85",
+                "url": "https://api.github.com/repos/daikon-cqrs/event-sourcing/zipball/d2745b944260699927c0a09993125afe8609d5af",
+                "reference": "d2745b944260699927c0a09993125afe8609d5af",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^v3.0",
-                "daikon/message-bus": "dev-upgrade-7.2",
+                "daikon/interop": "master@dev",
+                "daikon/message-bus": "dev-upgrade/nativecalls",
                 "php": "^7.1"
             },
             "require-dev": {
@@ -199,24 +201,56 @@
                 "event-sourcing",
                 "immutable"
             ],
-            "time": "2018-10-31T20:28:54+00:00"
+            "time": "2018-11-28T17:40:02+00:00"
         },
         {
-            "name": "daikon/message-bus",
-            "version": "dev-upgrade-7.2",
+            "name": "daikon/interop",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/daikon-cqrs/message-bus.git",
-                "reference": "2b4c6d418c3082d816b5581350b561740578258b"
+                "url": "https://github.com/daikon-cqrs/interop.git",
+                "reference": "f4581af6d35d2db22a8bbe35bf655c2457da3123"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/2b4c6d418c3082d816b5581350b561740578258b",
-                "reference": "2b4c6d418c3082d816b5581350b561740578258b",
+                "url": "https://api.github.com/repos/daikon-cqrs/interop/zipball/f4581af6d35d2db22a8bbe35bf655c2457da3123",
+                "reference": "f4581af6d35d2db22a8bbe35bf655c2457da3123",
                 "shasum": ""
             },
             "require": {
-                "daikon/data-structure": "dev-upgrade-7.2",
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Daikon\\Interop\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MPL-2.0"
+            ],
+            "description": "Interop interfaces used across daikon components.",
+            "homepage": "https://github.com/daikon-cqrs/interop",
+            "time": "2017-07-25T18:40:38+00:00"
+        },
+        {
+            "name": "daikon/message-bus",
+            "version": "dev-upgrade/nativecalls",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/daikon-cqrs/message-bus.git",
+                "reference": "44a2dbf1262e0c3b18b02e3904420fb1ad6bdf57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/daikon-cqrs/message-bus/zipball/44a2dbf1262e0c3b18b02e3904420fb1ad6bdf57",
+                "reference": "44a2dbf1262e0c3b18b02e3904420fb1ad6bdf57",
+                "shasum": ""
+            },
+            "require": {
+                "daikon/data-structure": "dev-upgrade/nativecalls",
+                "daikon/interop": "master@dev",
                 "php": "^7.2",
                 "ramsey/uuid": "^3.8"
             },
@@ -242,27 +276,28 @@
                 "message-bus",
                 "messaging"
             ],
-            "time": "2018-10-12T00:50:24+00:00"
+            "time": "2018-11-28T16:54:13+00:00"
         },
         {
             "name": "daikon/read-model",
-            "version": "dev-upgrade-7.2",
+            "version": "dev-upgrade/nativecalls",
             "source": {
                 "type": "git",
                 "url": "https://github.com/daikon-cqrs/read-model.git",
-                "reference": "c7e5f912e646e5a3fddb85ee3d10b26883ef3642"
+                "reference": "9288f2a82eab0471b2a46371139c72e52a134280"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/c7e5f912e646e5a3fddb85ee3d10b26883ef3642",
-                "reference": "c7e5f912e646e5a3fddb85ee3d10b26883ef3642",
+                "url": "https://api.github.com/repos/daikon-cqrs/read-model/zipball/9288f2a82eab0471b2a46371139c72e52a134280",
+                "reference": "9288f2a82eab0471b2a46371139c72e52a134280",
                 "shasum": ""
             },
             "require": {
                 "beberlei/assert": "^3.0",
-                "daikon/data-structure": "dev-upgrade-7.2",
-                "daikon/event-sourcing": "dev-upgrade-7.2",
-                "daikon/message-bus": "dev-upgrade-7.2",
+                "daikon/data-structure": "dev-upgrade/nativecalls",
+                "daikon/event-sourcing": "dev-upgrade/nativecalls",
+                "daikon/interop": "master@dev",
+                "daikon/message-bus": "dev-upgrade/nativecalls",
                 "php": "^7.2"
             },
             "require-dev": {
@@ -289,7 +324,7 @@
                 "read-model",
                 "repository"
             ],
-            "time": "2018-10-13T14:29:23+00:00"
+            "time": "2018-11-29T16:22:22+00:00"
         },
         {
             "name": "elasticsearch/elasticsearch",

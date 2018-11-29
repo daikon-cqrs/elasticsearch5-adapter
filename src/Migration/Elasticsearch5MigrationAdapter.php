@@ -49,7 +49,7 @@ final class Elasticsearch5MigrationAdapter implements MigrationAdapterInterface
             'id' => $identifier,
             'body' => [
                 'target' => $identifier,
-                'migrations' => $executedMigrations->toArray()
+                'migrations' => $executedMigrations->toNative()
             ]
         ]);
     }

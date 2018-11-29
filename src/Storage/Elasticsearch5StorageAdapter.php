@@ -36,7 +36,7 @@ final class Elasticsearch5StorageAdapter implements StorageAdapterInterface, Sea
         }
 
         $projectionClass = $document['_source']['@type'];
-        return $projectionClass::fromArray($document['_source']);
+        return $projectionClass::fromNative($document['_source']);
     }
 
     public function write(string $identifier, array $data): bool
@@ -73,7 +73,7 @@ final class Elasticsearch5StorageAdapter implements StorageAdapterInterface, Sea
         $projections = [];
         foreach ($results['hits']['hits'] as $document) {
             $projectionClass = $document['_source']['@type'];
-            $projections[$document['_id']] = $projectionClass::fromArray($document['_source']);
+            $projections[$document['_id']] = $projectionClass::fromNative($document['_source']);
         }
 
         return new ProjectionMap($projections);

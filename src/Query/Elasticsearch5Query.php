@@ -8,13 +8,18 @@ final class Elasticsearch5Query implements QueryInterface
 {
     private $query;
 
-    public function __construct(array $query = [])
+    public function fromNative($query): QueryInterface
     {
-        $this->query = $query;
+        return new self($query);
     }
 
-    public function toNative()
+    public function toNative(): array
     {
         return $this->query;
+    }
+
+    private function __construct(array $query = [])
+    {
+        $this->query = $query;
     }
 }
