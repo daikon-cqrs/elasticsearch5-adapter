@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the daikon-cqrs/elasticsearch5-adapter project.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
 
 namespace Daikon\Elasticsearch5\Query;
 
@@ -10,7 +18,7 @@ final class Elasticsearch5Query implements QueryInterface
     private $query;
 
     /** @param array $query */
-    public function fromNative($query): QueryInterface
+    public static function fromNative($query): QueryInterface
     {
         return new self($query);
     }
