@@ -1,4 +1,12 @@
 <?php
+/**
+ * This file is part of the daikon-cqrs/elasticsearch5-adapter project.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+declare(strict_types=1);
 
 namespace Daikon\Elasticsearch5\Migration;
 
@@ -11,8 +19,10 @@ use Elasticsearch\Common\Exceptions\Missing404Exception;
 
 final class Elasticsearch5MigrationAdapter implements MigrationAdapterInterface
 {
+    /** @var Elasticsearch5Connector */
     private $connector;
 
+    /** @var array */
     private $settings;
 
     public function __construct(Elasticsearch5Connector $connector, array $settings = [])
@@ -49,7 +59,7 @@ final class Elasticsearch5MigrationAdapter implements MigrationAdapterInterface
             'id' => $identifier,
             'body' => [
                 'target' => $identifier,
-                'migrations' => $executedMigrations->toArray()
+                'migrations' => $executedMigrations->toNative()
             ]
         ]);
     }
