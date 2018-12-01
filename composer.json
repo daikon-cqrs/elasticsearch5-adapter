@@ -9,8 +9,8 @@
     "minimum-stability": "dev",
     "require": {
         "php": "^7.2",
-        "daikon/dbal": "dev-upgrade/nativecalls",
-        "daikon/read-model": "dev-upgrade/nativecalls",
+        "daikon/dbal": "dev-upgrade-7.2",
+        "daikon/read-model": "dev-upgrade-7.2",
         "elasticsearch/elasticsearch": "^5.0"
     },
     "require-dev": {
